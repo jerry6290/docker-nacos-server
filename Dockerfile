@@ -8,6 +8,7 @@ ENV MODE="cluster" \
     CLASSPATH=".:/home/nacos/conf:$CLASSPATH" \
     CLUSTER_CONF="/home/nacos/conf/cluster.conf" \
     FUNCTION_MODE="all" \
+    JAVA="$JAVA_HOME/bin/java" \
     JVM_XMS="2g" \
     JVM_XMX="2g" \
     JVM_XMN="1g" \
