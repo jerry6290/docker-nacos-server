@@ -28,9 +28,8 @@ RUN set -x \
     && ln -snf /usr/share/zoneinfo/$TIME_ZONE /etc/localtime && echo '$TIME_ZONE' > /etc/timezone \
 
 
-ADD bin/docker-startup.sh bin/docker-startup.sh
-ADD build conf/application.properties
-ADD init.d/custom.properties init.d/custom.properties
+ADD build/startup.sh bin/startup.sh
+ADD build/application.properties conf/application.properties
 
 
 # set startup log dir
@@ -42,4 +41,4 @@ RUN mkdir -p logs \
 RUN chmod +x bin/docker-startup.sh
 
 EXPOSE 8848
-ENTRYPOINT ["bin/docker-startup.sh"]
+ENTRYPOINT ["bin/startup.sh"]
