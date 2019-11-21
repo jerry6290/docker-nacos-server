@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 set -x
 export CUSTOM_SEARCH_LOCATIONS=file:${BASE_DIR}/conf/
 export CUSTOM_SEARCH_NAMES="application,custom"
