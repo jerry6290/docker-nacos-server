@@ -25,7 +25,7 @@ RUN set -x \
     && wget  https://github.com/alibaba/nacos/releases/download/${NACOS_VERSION}/nacos-server-${NACOS_VERSION}.tar.gz -P /home \
     && tar -xzvf /home/nacos-server-${NACOS_VERSION}.tar.gz -C /home \
     && rm -rf /home/nacos-server-${NACOS_VERSION}.tar.gz /home/nacos/bin/* /home/nacos/conf/*.properties /home/nacos/conf/*.example /home/nacos/conf/nacos-mysql.sql \
-    && ln -snf /usr/share/zoneinfo/$TIME_ZONE /etc/localtime && echo '$TIME_ZONE' > /etc/timezone \
+    && ln -snf /usr/share/zoneinfo/$TIME_ZONE /etc/localtime && echo '$TIME_ZONE' > /etc/timezone
 
 
 ADD build/startup.sh bin/startup.sh
@@ -38,7 +38,7 @@ RUN mkdir -p logs \
 	&& touch start.out \
 	&& ln -sf /dev/stdout start.out \
 	&& ln -sf /dev/stderr start.out
-RUN chmod +x bin/docker-startup.sh
+RUN chmod +x bin/startup.sh
 
 EXPOSE 8848
 ENTRYPOINT ["bin/startup.sh"]
